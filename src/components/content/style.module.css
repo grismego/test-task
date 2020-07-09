@@ -1,0 +1,5 @@
+.container {
+    border: 1px solid #999;
+    max-width: 1240px;
+    margin: 0 auto;
+}
