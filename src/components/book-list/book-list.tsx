@@ -1,7 +1,7 @@
 import React from 'react';
 import { Book } from '../book/book';
 
-export const BookList = () => {
+export const BookList: React.FC = () => {
     return (
         <div>
             <Book />
