@@ -1,10 +1,10 @@
 import { createSelector } from 'reselect';
 
-const booksSelector = state => state.books;
+const booksSelector = (state: RootStore) => state.books;
 
-const filterSelector = state => state.filter;
+const filterSelector = (state: RootStore) => state.filter;
 
-const tagsSelector = state => state.tags;
+const tagsSelector = (state: RootStore) => state.tags;
 
 export const booksToReadSelector = createSelector(booksSelector, books =>
     books.map(book => ({ ...book, status: 'TO_READ' }))
