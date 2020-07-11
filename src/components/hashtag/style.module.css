@@ -1,0 +1,9 @@
+.hashtag {
+    background-color: #ddd;
+    padding: 4px;
+    margin-right: 8px;
+    cursor: pointer;
+}
+.hashtag:hover {
+    filter: brightness(85%);
+}
