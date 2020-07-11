@@ -10,11 +10,15 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-redux": "^7.1.9",
+    "@types/redux-logger": "^3.0.8",
+    "normalize.css": "^8.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "react-scripts": "3.4.1",
     "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "reselect": "^4.0.0",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -39,6 +43,7 @@
     ]
   },
   "devDependencies": {
-    "@types/react-dom": "^16.9.8"
+    "@types/react-dom": "^16.9.8",
+    "redux-devtools-extension": "^2.13.8"
   }
 }

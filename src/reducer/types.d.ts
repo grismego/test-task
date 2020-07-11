@@ -3,13 +3,16 @@ type Book = {
     author: string;
     description: string;
     title: string;
-    hashtags?: string[];
+    tags: string[];
+    status: 'TO_READ' | 'IN_PROGRESS' | 'DONE';
 };
 
 type BookList = Book[];
 
 type RootStore = {
     books: BookList;
+    filter: TO_READ | IN_PROGRESS | DONE;
+    tags: string[];
 };
 
 type Action<T> = { type: string; payload: T };
