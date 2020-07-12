@@ -14,7 +14,7 @@ export const Filters: React.FC = () => {
         <div className={style.filters}>
             <span className={style.span}>Filters By:</span>
             {tags.map(tag => (
-                <Hashtag tag={tag} key={tag} onRemoveTag={removeTagHanlder} />
+                <Hashtag tag={tag} key={tag} onRemoveTag={removeTagHanlder} title='Remove tag' />
             ))}
             <span className={style.clear} onClick={() => dispatch(removeAllTags())}>
                 clear

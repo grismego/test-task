@@ -8,7 +8,7 @@ export const BookList: React.FC = () => {
     const books = useSelector(filteredBooks);
 
     const EmptyList = () => <div className={style.emptyList}>List is Empty</div>;
-    console.log(books);
+
     return (
         <div>
             {books.length ? (

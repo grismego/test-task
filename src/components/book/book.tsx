@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { memo } from 'react';
 import style from './style.module.css';
 import { Hashtag } from '../hashtag/hashtag';
 import { useDispatch } from 'react-redux';
 import { toggleStatus } from '../../reducer/actions';
 import { NextStatus, Statuses } from '../../constants/constants';
+import { isIdEqual } from '../../utils';
 
-export const Book = ({ id, author, description, title, tags, status }: Book) => {
+export const Book = memo(({ id, author, description, title, tags, status }: Book) => {
     const dispatch = useDispatch();
-
     return (
         <div className={style.book}>
             <div className={style.header}>
@@ -29,9 +29,9 @@ export const Book = ({ id, author, description, title, tags, status }: Book) => 
             <div className={style.hashtags}>
                 {tags &&
                     tags.map((tag: string) => {
-                        return <Hashtag tag={tag} key={tag + id} />;
+                        return <Hashtag tag={tag} key={tag + id} title='Add tag' />;
                     })}
             </div>
         </div>
     );
-};
+}, isIdEqual);
