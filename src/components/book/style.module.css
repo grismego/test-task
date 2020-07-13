@@ -21,9 +21,13 @@
 }
 .author {
     margin-bottom: 8px;
+    margin-top: 0;
 }
 .hashtags {
     display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: baseline;
 }
 
 .status {
@@ -33,4 +37,17 @@
 }
 .statusContainer {
     cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+.statusContainer:hover {
+    opacity: 0.8;
+}
+.headerAuthor {
+    flex-basis: 60%;
+}
+
+.description {
+    margin-top: 0;
+    margin-bottom: 16px;
 }

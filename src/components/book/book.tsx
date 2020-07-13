@@ -9,9 +9,9 @@ import { isIdEqual } from '../../utils';
 export const Book = memo(({ id, author, description, title, tags, status }: Book) => {
     const dispatch = useDispatch();
     return (
-        <div className={style.book}>
+        <article className={style.book}>
             <div className={style.header}>
-                <div>
+                <div className={style.headerAuthor}>
                     <p className={style.author}> {author} </p>
                     <p className={style.title}> {title} </p>
                 </div>
@@ -22,16 +22,16 @@ export const Book = memo(({ id, author, description, title, tags, status }: Book
                     }}
                 >
                     <span className={style.status}>{Statuses[status]}</span>
-                    <span>→</span>
+                    <span> {Statuses[status] === 'return "To Read"' ? '↲' : '→'}</span>
                 </div>
             </div>
-            <p className='book-description'>{description}</p>
+            {description && <p className={style.description}>{description}</p>}
             <div className={style.hashtags}>
                 {tags &&
                     tags.map((tag: string) => {
                         return <Hashtag tag={tag} key={tag + id} title='Add tag' />;
                     })}
             </div>
-        </div>
+        </article>
     );
 }, isIdEqual);

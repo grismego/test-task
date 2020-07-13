@@ -10,7 +10,7 @@ export const BookList: React.FC = () => {
     const EmptyList = () => <div className={style.emptyList}>List is Empty</div>;
 
     return (
-        <div>
+        <section>
             {books.length ? (
                 books.map((book: Book) => {
                     return <Book {...book} key={book.id} />;
@@ -18,6 +18,6 @@ export const BookList: React.FC = () => {
             ) : (
                 <EmptyList />
             )}
-        </div>
+        </section>
     );
 };

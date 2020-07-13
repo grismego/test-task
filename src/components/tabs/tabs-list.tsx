@@ -18,7 +18,7 @@ export const TabsList: React.FC = () => {
     };
 
     return (
-        <div className='tabs-list'>
+        <section className='tabs-list'>
             <NavLink
                 to='/'
                 className={style.link}
@@ -46,6 +46,6 @@ export const TabsList: React.FC = () => {
             >
                 <Tab text={'Done'} filter={'DONE'} />
             </NavLink>
-        </div>
+        </section>
     );
 };

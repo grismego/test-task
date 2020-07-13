@@ -7,7 +7,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { rootReducer } from './reducer/reducer';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import logger from 'redux-logger';
-import { BrowserRouter as Router, useHistory } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { fetchData } from './utils';
 import { fetchBooks, resetApp } from './reducer/actions';
 import { BASE_URL } from './constants/constants';
