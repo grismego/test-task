@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { addingTag } from '../../reducer/actions';
 import { useHistory } from 'react-router-dom';
 
-export const Hashtag = (props: { tag: string; onRemoveTag?: Function; title?: string }) => {
+export const Hashtag: React.FC<{ tag: string; onRemoveTag?: Function; title?: string }> = props => {
     const { tag, onRemoveTag, title } = props;
     const dispatch = useDispatch();
     let history = useHistory();
