@@ -1,22 +1,7 @@
-.tab {
-    padding: 24px;
-    width: 100%;
-    text-align: center;
-    /* border: 1px solid #999; */
-    border-color: #999;
-    border-top: 0;
-    border-left: 0;
-    border-right: 1px;
-    border-bottom: 1px;
-    border-style: solid;
-    font-size: 16px;
-    cursor: pointer;
-}
-
 .tab:hover {
     font-weight: bold;
 }
 
-.tab.active {
+.tab .is-active {
     border-bottom: none;
 }

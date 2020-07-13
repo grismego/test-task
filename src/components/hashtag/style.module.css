@@ -4,6 +4,9 @@
     margin-right: 8px;
     cursor: pointer;
 }
+.hashtag:last-child {
+    margin-top: 8px;
+}
 .hashtag:hover {
     filter: brightness(85%);
 }

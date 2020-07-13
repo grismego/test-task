@@ -8,9 +8,9 @@ export const BookList: React.FC = () => {
     const books = useSelector(filteredBooks);
 
     const EmptyList = () => <div className={style.emptyList}>List is Empty</div>;
-    console.log(books);
+
     return (
-        <div>
+        <section>
             {books.length ? (
                 books.map((book: Book) => {
                     return <Book {...book} key={book.id} />;
@@ -18,6 +18,6 @@ export const BookList: React.FC = () => {
             ) : (
                 <EmptyList />
             )}
-        </div>
+        </section>
     );
 };

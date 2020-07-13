@@ -3,7 +3,7 @@ export const BASE_URL = 'https://raw.githubusercontent.com/lastw/test-task/maste
 export enum Statuses {
     TO_READ = 'Start reading',
     IN_PROGRESS = 'Fininsh reading',
-    DONE = 'return "To Read',
+    DONE = 'return "To Read"',
 }
 
 export enum NextStatus {

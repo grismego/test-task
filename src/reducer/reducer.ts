@@ -1,4 +1,12 @@
-import { FETCH_BOOKS, CHANGE_FILTER, CHANGE_STATUS, ADDING_TAG, REMOVE_TAG, REMOVE_ALL_TAGS } from './action-types';
+import {
+    FETCH_BOOKS,
+    CHANGE_FILTER,
+    CHANGE_STATUS,
+    ADDING_TAG,
+    REMOVE_TAG,
+    REMOVE_ALL_TAGS,
+    RESET_APP,
+} from './action-types';
 import {
     fetchBooksHandler,
     changeFilterHandler,
@@ -6,6 +14,8 @@ import {
     addingTagHandler,
     removeTagHandler,
     removeAllTagsHandler,
+    resetAppHandler,
+    restoreStateHandler,
 } from './handlers';
 
 export const initialState: RootStore = {
@@ -14,6 +24,22 @@ export const initialState: RootStore = {
     tags: [],
 };
 
+const loadState = () => {
+    try {
+        const serialisedState = window.localStorage.getItem('app_state');
+
+        if (!serialisedState) {
+            return initialState;
+        }
+
+        return JSON.parse(serialisedState);
+    } catch (err) {
+        return initialState;
+    }
+};
+
+const stateLocal = loadState();
+
 const actionHandler = new Map<string, any>([
     [FETCH_BOOKS, fetchBooksHandler],
     [CHANGE_FILTER, changeFilterHandler],
@@ -21,10 +47,11 @@ const actionHandler = new Map<string, any>([
     [ADDING_TAG, addingTagHandler],
     [REMOVE_TAG, removeTagHandler],
     [REMOVE_ALL_TAGS, removeAllTagsHandler],
-    ['DEFAULT', () => initialState],
+    [RESET_APP, resetAppHandler],
+    ['DEFAULT', restoreStateHandler],
 ]);
 
-export function rootReducer(state = initialState, action: Action<any>) {
+export function rootReducer(state = stateLocal, action: Action<any>) {
     const reducer = actionHandler.has(action.type) ? actionHandler.get(action.type) : actionHandler.get('DEFAULT');
     return reducer(state, action);
 }
