@@ -31,7 +31,7 @@ export const removeAllTagsHandler = (state: RootStore) => ({
     tags: [],
 });
 
-export const resetAppHandler = (state: RootStore) => ({
+export const resetAppHandler = () => ({
     books: [],
     filter: 'TO_READ',
     tags: [],

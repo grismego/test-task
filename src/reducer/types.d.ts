@@ -11,7 +11,7 @@ type BookList = Book[];
 
 type RootStore = {
     books: BookList;
-    filter: TO_READ | IN_PROGRESS | DONE;
+    filter: 'TO_READ' | 'IN_PROGRESS' | 'DONE';
     tags: string[];
 };
 

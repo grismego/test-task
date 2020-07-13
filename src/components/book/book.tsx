@@ -6,7 +6,7 @@ import { toggleStatus } from '../../reducer/actions';
 import { NextStatus, Statuses } from '../../constants/constants';
 import { isIdEqual } from '../../utils';
 
-export const Book = memo(({ id, author, description, title, tags, status }: Book) => {
+export const Book: React.FC<Book> = memo(({ id, author, description, title, tags, status }) => {
     const dispatch = useDispatch();
     return (
         <article className={style.book}>
